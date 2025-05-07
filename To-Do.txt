@@ -1,0 +1,9 @@
+News
+Calendar
+Sort by ex lenght or other stuff
+More stuff about the creators
+
+
+let links = Array.from(document.querySelectorAll("a[href*='/episode/']"))
+    .map(a => a.href);
+console.log(links.join("\n"));

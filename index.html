@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Podcast Vault</title>
+  <title>The Echo Archives</title>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="images/NoBg-W-Logo.png" type="image/x-icon">
+  <link rel="icon" href="images/Circle2-Logo-S.png" type="image/x-icon">
 
 </head>
 <body>
     <header>
-        <h1>The Echo Archives</h1>
+        <img src="images/Horizontal-Logo-W.png" alt="The Echo Archives"/>
     </header>
 
 
@@ -47,6 +47,23 @@
 
                 <!-- Add more -->
             </div>
+            <!-- Toggle Button -->
+            <!-- Chat Toggle Button -->
+            <button id="chat-toggle"><img src="images/chat-icon.svg" alt="Chat icon"></button>
+
+            <!-- Chat Container -->
+            <div id="chat-container">
+            <div id="chatLog"></div>
+            
+            <div class="chat-input-area">
+                <input type="text" id="userInput" placeholder="Type your message..." />
+                <button onclick="sendMessage()">Send</button>
+            </div>
+            </div>
+
+
+            
+              
         </div>
     </div>
     
@@ -62,17 +79,17 @@
       <p class="rating">Rating: 10/10</p>
     </a>
 
-    <a class="podcast-card" href="podcasts/oz9.html" data-tags="space,sci-fi,comedy">
-      <img src="images/oz9.jpeg" alt="Oz 9 Cover"/>
+    <a class="podcast-card" href="../oz9/oz9.html" data-tags="space,sci-fi,comedy">
+      <img src="../oz9/oz9.jpeg" alt="Oz 9 Cover"/>
       <h2>Oz 9</h2>
       <p class="tags"><span class="tag">Sci-fi</span> <span class="tag">Space</span> <span class="tag">Comedy</span></p>
       <p class="rating">Rating: 6/10</p>
     </a>
-    <a class="podcast-card" href="podcasts/oz9.html" data-tags="sci-fi,science,timetravel">
-        <img src="images/ArsParadoxica.jpeg" alt="Ars Paradoxica Cover"/>
+    <a class="podcast-card" href="ars paradoxica/ars-paradoxica.html" data-tags="sci-fi,science,timetravel">
+        <img src="../ars paradoxica/ArsParadoxica.jpeg" alt="Ars Paradoxica Cover"/>
         <h2>Ars Paradoxica</h2>
         <p class="tags"><span class="tag">Sci-fi</span> <span class="tag">Science</span> <span class="tag">Time Travel</span></p>
-        <p class="rating">Rating: 7/10</p>
+        <p class="rating">Rating: 8/10</p>
     </a>
     <a class="podcast-card" href="podcasts/oz9.html" data-tags="sci-fi,future,mystery">
         <img src="images/RedValley.jpeg" alt="Red Valley Cover"/>
@@ -142,7 +159,7 @@
     </a>
     <a class="podcast-card" href="podcasts/oz9.html" data-tags="sci-fi,future,comedy">
         <img src="images/CrystalBlue.jpeg" alt="Crystal Blue Cover"/>
-        <h2>Ars Paradoxica</h2>
+        <h2>Crystal Blues</h2>
         <p class="tags"><span class="tag">Sci-fi</span> <span class="tag">Future</span> <span class="tag">Comedy</span></p>
         <p class="rating">Rating: 5/10</p>
     </a>
@@ -156,9 +173,12 @@
         <img src="images/Tower4.jpeg" alt="Tower 4 Cover"/>
         <h2>Tower 4</h2>
         <p class="tags"><span class="tag">Mystery</span> <span class="tag">Isolation</span> <span class="tag">Comedy</span></p>
-        <p class="rating">Rating: 9/10</p>
+        <p class="rating">Rating: 10/10</p>
     </a>
   </main>
+
+  <p id="noResultsMsg" style="display: none;">No results found</p>
+
 
   <button id="backToTop">↑ Top</button>
 

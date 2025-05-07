@@ -117,3 +117,95 @@ function toggleDropdown() {
     document.getElementById('season-menu').classList.add('hidden');
   }
   
+
+  const toggleBtn = document.getElementById('chat-toggle');
+  const chatContainer = document.getElementById('chat-container');
+  const chatLog = document.getElementById('chatLog');
+  const userInput = document.getElementById('userInput');
+  
+  // Toggle the chat box open/closed
+  toggleBtn.onclick = () => {
+    // Check if chat is currently displayed
+    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+      chatContainer.style.display = 'flex'; // Open chat
+    } else {
+      chatContainer.style.display = 'none'; // Close chat
+    }
+  };
+  
+  async function sendMessage() {
+    const msg = userInput.value.trim();
+    if (!msg) return;
+  
+    appendMessage(msg, 'user');
+    userInput.value = "";
+    chatLog.scrollTop = chatLog.scrollHeight;
+  
+    // Typing indicator
+    const typingIndicator = document.createElement('div');
+    typingIndicator.className = 'message bot';
+    typingIndicator.innerHTML = `
+    <div class="loader">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+    `;
+
+    chatLog.appendChild(typingIndicator);
+    chatLog.scrollTop = chatLog.scrollHeight;
+  
+    try {
+      const response = await fetch("http://mpmc.ddns.net:3000/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question: msg })
+      });
+  
+      const result = await response.json();
+  
+      typingIndicator.remove();
+      appendMessage(result.answer, 'bot', true);
+      chatLog.scrollTop = chatLog.scrollHeight;
+  
+    } catch (err) {
+      typingIndicator.remove();
+      appendMessage('Error: failed to reach AI.', 'bot');
+    }
+  }
+  
+  function appendMessage(text, sender, animate = false) {
+    const msgEl = document.createElement('div');
+    msgEl.className = `message ${sender}`;
+  
+    if (!animate) {
+      msgEl.textContent = text;
+      chatLog.appendChild(msgEl);
+      return;
+    }
+  
+    // Word-by-word typing animation
+    chatLog.appendChild(msgEl);
+    const words = text.split(' ');
+    let i = 0;
+    const wordSpeed = 200; // ms per word
+  
+    function typeWord() {
+      if (i < words.length) {
+        msgEl.textContent += (i > 0 ? ' ' : '') + words[i];
+        i++;
+        chatLog.scrollTop = chatLog.scrollHeight;
+        setTimeout(typeWord, wordSpeed);
+      }
+    }
+  
+    typeWord();
+  }
+  
+  userInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter" && chatContainer.style.display === "flex") {
+      event.preventDefault();
+      sendMessage();
+    }
+  });
+  
