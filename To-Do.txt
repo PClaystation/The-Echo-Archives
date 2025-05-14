@@ -3,6 +3,8 @@ Calendar
 Sort by ex lenght or other stuff
 More stuff about the creators
 
+You know what, no. Once i am done with the ones currently being done i will be done and move on
+
 
 let links = Array.from(document.querySelectorAll("a[href*='/episode/']"))
     .map(a => a.href);
