@@ -1,32 +1,78 @@
 [
-    {
-      "title": "Impact Winter",
-      "ratings": {
-        "voice_acting": 10,
-        "sound_design": 10,
-        "story": 9,
-        "characters": 9,
-        "ads": 9.5,
-        "length": 9,
-        "etc": 10
-      },
-      "final_rating": 10,
-      "tags": ["Survival", "Post-apocalyptic", "Vampires", "Sci-fi", "Fantasy"],
-      "length": "3 seasons - 12 episodes per season - 30 min per episode",
-      "structure": "Alternates between main characters every other episode (3 in season 2)",
-      "narrator": "Yes (in universe journal)",
-      "ads": "Mixed, Yes (season 1, 2), No (season 3)",
-      "would_relisten": true,
-      "favorite_episodes": "Season 1, Episodes 4 - 8",
-      "quote": "We make the choices we can live with - Darci",
-      "summary": "Impact Winter is a post-apocalyptic audio drama set...",
-      "thoughts": "I absolutely loved Impact Winter...",
-      "best_for": "People who love gritty survival...",
-      "similar_to": ["We're Alive", "End of All Hope"]
+  {
+    "title": "Impact Winter",
+    "ratings": {
+      "voice_acting": 10,
+      "sound_design": 10,
+      "story": 9,
+      "characters": 9,
+      "ads": 9.5,
+      "length": 9,
+      "etc": 10
     },
-    {
-      "title": "OZ-9",
-      "...": "Same structure, filled in"
-    }
-  ]
+    "final_rating": 10,
+    "tags": ["Survival", "Post-apocalyptic", "Vampires", "Sci-fi", "Fantasy"],
+    "length": "3 seasons – 12 episodes each – 18 hours total",
+    "structure": "Alternates between characters",
+    "narrator": "Yes (in-universe journal)",
+    "ads": "Mixed (S1 & S2 yes, S3 no)",
+    "would_relisten": true,
+    "favorite_episodes": "S1, Ep 4–8",
+    "quote": "You make the choices you can live with. - Rook",
+    "summary": "Impact Winter is a post-apocalyptic audio drama set seven years after a comet slammed into Earth, plunging the world into a devastating winter and endless darkness. But that wasn't the only nightmare unleashed. From the shadows came bloodthirsty monsters. Vampires. The year is 2042. Darci and her younger sister Hope live in a bunker beneath a medieval castle, surviving alongside a small group of others. They make do with what they have and hold onto the hope that the sun will return someday. But in this brutal new world, nothing is as it seems. Are the vampires truly the monsters everyone fears? What's really happening behind the scenes? Will the sun ever come back? Welcome to Impact Winter where survival is only the beginning.",
+    "thoughts": "I absolutely loved Impact Winter. It really grabs you by the throat and pulls you in. Season 1 was absolutely amazing, but it tapered off a bit towards season 3 but overall was still an amazing listen. Would recommend to anyone looking for a new audio drama to listen to.",
+    "best_for": "",
+    "similar_to": ["We're Alive", "End of All Hope"]
+  },
+  {
+    "title": "Ars Paradoxica",
+    "ratings": {
+      "voice_acting": 7,
+      "sound_design": 6,
+      "story": 9,
+      "characters": 9,
+      "ads": 9,
+      "length": 8,
+      "etc": 8
+    },
+    "final_rating": 7.5,
+    "tags": ["Sci-fi", "Science", "Time travel", "Paradoxes", "Mystery"],
+    "length": "3 seasons - 10-14 episodes each - 30 minutes per episode - 18 hours total",
+    "structure": "--------",
+    "narrator": "Yes (in-universe journal)",
+    "ads": "No",
+    "would_relisten": true,
+    "favorite_episodes": "Season 3, Episode 14",
+    "quote": "",
+    "summary": "Ars PARADOXICA is a science fiction audio drama centered around time travel, secrecy, and the ethical dilemmas of science. It follows a brilliant physicist who accidentally discovers time travel and finds herself entangled in a web of Cold War-era espionage, military agendas, and the consequences of tampering with time itself. The show blends hard science fiction with noir-style storytelling, offering a mix of mystery, intrigue, and deep moral questions. It's known for its smart writing, complex characters, and tight plot that challenges listeners to keep up.",
+    "thoughts": "",
+    "best_for": "",
+    "similar_to": ["Red Valley"]
+  },
+  {
+    "title": "OZ 9",
+    "ratings": {
+      "voice_acting": 6,
+      "sound_design": 5,
+      "story": 6,
+      "characters": 7,
+      "ads": 8,
+      "length": 9.5,
+      "etc": 6
+    },
+    "final_rating": 10,
+    "tags": ["Space", "Unserious", "Comedy", "Sci-fi", "Future"],
+    "length": "5/6 seasons - 20 episodes per season - 54 hours total",
+    "structure": "Bounces around to different characters and places",
+    "narrator": "Yes (in-universe character)",
+    "ads": "No",
+    "would_relisten": false,
+    "favorite_episodes": "Season 4, Episode 20",
+    "quote": "",
+    "summary": "Oz 9 is a space comedy following the wildly incompetent crew of a spaceship called the Oz 9. Built by a shady corporation named Gated Galaxies, the ship was supposedly designed to transport rich people across the universe to colonize new planets — but as the journey unfolds, it becomes clear that's not its only purpose. The Oz 9, in particular, is staffed by a crew of stunningly stupid idiots and a somewhat horny AI, and together they stumble their way through one disaster after another in deep space.",
+    "thoughts": "I wasn't the biggest fan of Oz 9 at first — it took a while to get going, and I usually prefer more serious audio dramas. This was the exact opposite of that. That said, it does get more interesting after the first season, and I get why some people really love it. It's chaotic, unserious, and definitely has its moments. Not for me, but not bad either, just not my style.",
+    "best_for": "",
+    "similar_to": ["Station 151", "EOS 10", "Wolf 359"]
+  }
+]
   

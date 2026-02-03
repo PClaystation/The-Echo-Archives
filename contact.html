@@ -1,5 +1,7 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8">
     <link rel="icon" href="../images/C2-dark.png" type="image/x-icon">
 
     <style>
@@ -7,8 +9,8 @@
         header button {
             background-color: rgb(255, 255, 255);
             color: black;
-            width: 100;
-            height: 60;
+            width: 100px;
+            height: 60px;
         }
 
       /* Center the navigation */
@@ -61,8 +63,7 @@
       }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <title>Contact form
-</title>
+    <title>Contact form</title>
     <script async src="https://tally.so/widgets/embed.js"></script>
     <style type="text/css">
       html { margin: 0; height: 100%; overflow: hidden; }
@@ -74,12 +75,20 @@
     
 
     <header>
-      <div class="left-placeholder"><button>Back</button></div> <!-- Empty div for left spacing -->
+      <div class="left-placeholder"><button type="button" id="back-button">Back</button></div> <!-- Empty div for left spacing -->
       <nav>
 
       </nav>
-      <div class="right-text"></div> <!-- Added id -->
+    <div class="right-text"></div> <!-- Added id -->
     </header>
+    <script>
+      const backButton = document.getElementById('back-button');
+      if (backButton) {
+        backButton.addEventListener('click', () => {
+          window.history.back();
+        });
+      }
+    </script>
 
     
   </body>

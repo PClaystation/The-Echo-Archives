@@ -17,7 +17,7 @@ if (searchInput) {
 // Tag click functionality: Filters by clicking tags
 tags.forEach(tag => {
   tag.addEventListener("click", () => {
-    const value = tag.innerText.toLowerCase();
+    const value = tag.innerText.toLowerCase().replace(/\s+/g, "-");
     if (searchInput) {
       searchInput.value = value;
       const event = new Event("input");
@@ -87,6 +87,10 @@ document.querySelectorAll('#filterDropdown input[type="checkbox"]').forEach(chec
 window.addEventListener('scroll', function() {
     const radioInput = document.querySelector('.radio-input');
     const scrollableContainer = document.querySelector('.scrollable-container');
+
+    if (!radioInput || !scrollableContainer) {
+      return;
+    }
     
     // Check if the scroll position is past the element
     if (window.scrollY >= radioInput.offsetTop) {
@@ -122,18 +126,23 @@ function toggleDropdown() {
   const chatContainer = document.getElementById('chat-container');
   const chatLog = document.getElementById('chatLog');
   const userInput = document.getElementById('userInput');
-  
+
   // Toggle the chat box open/closed
-  toggleBtn.onclick = () => {
-    // Check if chat is currently displayed
-    if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
-      chatContainer.style.display = 'flex'; // Open chat
-    } else {
-      chatContainer.style.display = 'none'; // Close chat
-    }
-  };
+  if (toggleBtn && chatContainer) {
+    toggleBtn.onclick = () => {
+      // Check if chat is currently displayed
+      if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+        chatContainer.style.display = 'flex'; // Open chat
+      } else {
+        chatContainer.style.display = 'none'; // Close chat
+      }
+    };
+  }
   
   async function sendMessage() {
+    if (!userInput || !chatLog) {
+      return;
+    }
     const msg = userInput.value.trim();
     if (!msg) return;
   
@@ -156,7 +165,8 @@ function toggleDropdown() {
     chatLog.scrollTop = chatLog.scrollHeight;
   
     try {
-      const response = await fetch("http://mpmc.ddns.net:3000/ask", {
+      const protocol = window.location.protocol === 'https:' ? 'https:' : 'http:';
+      const response = await fetch(`${protocol}//mpmc.ddns.net:3000/ask`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ question: msg })
@@ -202,10 +212,12 @@ function toggleDropdown() {
     typeWord();
   }
   
-  userInput.addEventListener("keydown", function(event) {
-    if (event.key === "Enter" && chatContainer.style.display === "flex") {
-      event.preventDefault();
-      sendMessage();
-    }
-  });
+  if (userInput && chatContainer) {
+    userInput.addEventListener("keydown", function(event) {
+      if (event.key === "Enter" && chatContainer.style.display === "flex") {
+        event.preventDefault();
+        sendMessage();
+      }
+    });
+  }
   
